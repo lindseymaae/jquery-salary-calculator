@@ -12,10 +12,10 @@ let employeeInfo = [];
 let employeeList = [];
 function onReady() {
     console.log('jquery is loaded');
-    $('#inputButton').on('click', getInfo)
+    $('#inputButton').on('click', addEmployee);
 }
 
-function getInfo() {
+function addEmployee() {
     console.log('submit button working');
     let employeeFirstName = $('#firstNameInput').val();
     console.log(employeeFirstName);
@@ -35,10 +35,25 @@ function getInfo() {
     employeeList.push(employeeInfo);
 
     console.log(employeeList);
-    
 
-
-
-
-
+    $('#employeeTable').append(`
+        <tr> 
+        <td> 
+        ${employeeFirstName} 
+        </td> 
+        <td> 
+        ${employeeLastName} 
+        </td> 
+        <td>
+        ${employeeIdNumber}
+        </td>
+        <td>
+        ${employeeJobTitle}
+        </td>
+        <td>
+        ${employeeSalary}
+        </td>
+        </tr>
+ 
+    `);
 }
