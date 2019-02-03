@@ -53,7 +53,7 @@ function addEmployee() {
     `);//add input to table 
     emptyFields();//create function to clear input fields
     //create a function to calculate monthly costs
-    monthlyCosts();
+    monthlyCosts(employeeSalary);
 }
 
 function emptyFields(){
@@ -65,6 +65,8 @@ function emptyFields(){
 
 }//clear input fields
 
-function monthlyCosts(){
-    
+function monthlyCosts(num1){
+let monthly = num1 /12;
+
+    console.log(monthly);
 }
