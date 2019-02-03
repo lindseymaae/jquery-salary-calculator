@@ -17,6 +17,7 @@ let monthlySalaries=[];
 function onReady() {
     console.log('jquery is loaded');
     $('#inputButton').on('click', addEmployee);
+    $('#employeeTable').on('click', '.deleteButton' ,  deleteEmployee);
 }
 
 function addEmployee() {
@@ -56,7 +57,7 @@ function addEmployee() {
         ${employeeSalary}
         </td>
         <td>
-        <button id="deleteButton">Delete</button>
+        <button class="deleteButton">Delete</button>
         </td>
         </tr>
  
@@ -91,5 +92,9 @@ function addtogether(){
     $('#monthlyCosts').empty();
     $('#monthlyCosts').append('Total Monthly Costs:', Math.round(totalMonthly));
 }
-    
+    function deleteEmployee(){
+        console.log('in delete employee');
+        $(this).closest('tr').remove();
+
+    }
 
