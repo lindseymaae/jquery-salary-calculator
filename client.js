@@ -1,3 +1,4 @@
+
 //The application should have an input form that collects _employee first name, 
 //last name, ID number, job title, annual salary_.
 //A 'Submit' button should collect the form information, 
@@ -54,6 +55,9 @@ function addEmployee() {
         <td>
         ${employeeSalary}
         </td>
+        <td>
+        <button id="deleteButton">Delete</button>
+        </td>
         </tr>
  
     `);//add input to table 
@@ -81,13 +85,11 @@ console.log(monthlySalaries);
 function addtogether(){
     let totalMonthly=0;
     for(let i=0; i < monthlySalaries.length; i++){
-        totalMonthly =  totalMonthly + monthlySalaries[i];
-
-        
+        totalMonthly =  totalMonthly + monthlySalaries[i];        
     }//add together individual monthly salaries for total monthly cost
-    console.log(totalMonthly);
-
-    
+    console.log(Math.round(totalMonthly));
+    $('#monthlyCosts').empty();
+    $('#monthlyCosts').append('Total Monthly Costs:', Math.round(totalMonthly));
 }
     
 
