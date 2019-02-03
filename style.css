@@ -1,10 +1,13 @@
 input{
-      font-family: arial, sans-serif;
+      font-family: arial;
+      height: 20px;
+    
 }
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+ 
 }
 
 td, th {
@@ -15,4 +18,9 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+#inputButton{
+    height: 20px;
+    font-family: arial;
 }

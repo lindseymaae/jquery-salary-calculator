@@ -38,6 +38,8 @@ function addEmployee() {
 //append values to table
     $('#employeeTable').append(`
         <tr> 
+        <td>
+        </td>
         <td> 
         ${employeeFirstName} 
         </td> 
