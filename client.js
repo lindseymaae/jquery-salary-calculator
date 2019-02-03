@@ -35,10 +35,11 @@ function addEmployee() {
     salaries.push(employeeSalary);
     console.log(salaries);
 
-//append values to table
+    //append values to table
     $('#employeeTable').append(`
         <tr> 
-        <td>
+       <td>
+        <button class="deleteButton">Delete</button>
         </td>
         <td> 
         ${employeeFirstName} 
@@ -55,9 +56,7 @@ function addEmployee() {
         <td>
         ${employeeSalary}
         </td>
-        <td>
-        <button class="deleteButton">Delete</button>
-        </td>
+        
         </tr>
  
     `);//add input to table 
@@ -90,7 +89,7 @@ function addtogether() {
 
     console.log(Math.round(totalMonthly));
     $('#monthlyCosts').empty();//reset monthly costs field so they dont keep repeating
-    $('#monthlyCosts').append('Total Monthly Costs:', Math.round(totalMonthly));
+    $('#monthlyCosts').append('Total Monthly Costs:  $', Math.round(totalMonthly));
 }
 function deleteEmployee() {
     console.log('in delete employee');
