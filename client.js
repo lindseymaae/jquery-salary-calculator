@@ -10,17 +10,16 @@
 console.log('client.js has been loaded');
 
 $(document).ready(onReady);
-let employeeInfo = [];
-let employeeList = [];
-let salaries=[];
-let monthlySalaries=[];
+let salaries = [];
+let monthlySalaries = [];
 function onReady() {
     console.log('jquery is loaded');
     $('#inputButton').on('click', addEmployee);
-    $('#employeeTable').on('click', '.deleteButton' ,  deleteEmployee);
+    $('#employeeTable').on('click', '.deleteButton', deleteEmployee);
 }
 
 function addEmployee() {
+    //access input fields
     console.log('submit button working');
     let employeeFirstName = $('#firstNameInput').val();
     console.log(employeeFirstName);
@@ -33,12 +32,10 @@ function addEmployee() {
     let employeeSalary = $('#annualSalaryInput').val();
     console.log(employeeSalary);
 
-    employeeInfo.push(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeSalary);
-    employeeList.push(employeeInfo);
     salaries.push(employeeSalary);
     console.log(salaries);
-    
-    
+
+//append values to table
     $('#employeeTable').append(`
         <tr> 
         <td> 
@@ -67,7 +64,7 @@ function addEmployee() {
     monthlyCosts(employeeSalary);
 }
 
-function emptyFields(){
+function emptyFields() {
     $('#firstNameInput').val('');//empty iputs
     $('#lastNameInput').val('');
     $('#IDnumberInput').val('');
@@ -76,25 +73,26 @@ function emptyFields(){
 
 }//clear input fields
 
-function monthlyCosts(num1){
-    let num2 = num1 /12;
+function monthlyCosts(num1) {
+    let num2 = num1 / 12;
     monthlySalaries.push(num2)
-console.log(monthlySalaries);
+    console.log(monthlySalaries);
     addtogether();
-    }//get individual monthly salaries
-  
-function addtogether(){
-    let totalMonthly=0;
-    for(let i=0; i < monthlySalaries.length; i++){
-        totalMonthly =  totalMonthly + monthlySalaries[i];        
+}//get individual monthly salaries
+
+function addtogether() {
+    let totalMonthly = 0;
+    for (let i = 0; i < monthlySalaries.length; i++) {
+        totalMonthly = totalMonthly + monthlySalaries[i];
     }//add together individual monthly salaries for total monthly cost
+
     console.log(Math.round(totalMonthly));
-    $('#monthlyCosts').empty();
+    $('#monthlyCosts').empty();//reset monthly costs field so they dont keep repeating
     $('#monthlyCosts').append('Total Monthly Costs:', Math.round(totalMonthly));
 }
-    function deleteEmployee(){
-        console.log('in delete employee');
-        $(this).closest('tr').remove();
+function deleteEmployee() {
+    console.log('in delete employee');
+    $(this).closest('tr').remove();
 
-    }
+}
 
