@@ -4,7 +4,8 @@
 //store the information to calculate monthly costs, append information to the 
 //DOM and clear the input fields.
 //Using the stored information, 
-//calculate monthly costs and append this to the to DOM.If the total monthly cost exceeds $20, 000, add a red background color to the total monthly cost.
+//calculate monthly costs and append this to the to DOM.
+//If the total monthly cost exceeds $20, 000, add a red background color to the total monthly cost.
 console.log('client.js has been loaded');
 
 $(document).ready(onReady);
@@ -29,13 +30,7 @@ function addEmployee() {
     console.log(employeeSalary);
 
     employeeInfo.push(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeSalary);
-
-    console.log(employeeInfo);
-
     employeeList.push(employeeInfo);
-
-    console.log(employeeList);
-
     $('#employeeTable').append(`
         <tr> 
         <td> 
@@ -55,5 +50,21 @@ function addEmployee() {
         </td>
         </tr>
  
-    `);
+    `);//add input to table 
+    emptyFields();//create function to clear input fields
+    //create a function to calculate monthly costs
+    monthlyCosts();
+}
+
+function emptyFields(){
+    $('#firstNameInput').val('');//empty iputs
+    $('#lastNameInput').val('');
+    $('#IDnumberInput').val('');
+    $('#jobTitleInpu').val('');
+    $('#annualSalaryInput').val('');
+
+}//clear input fields
+
+function monthlyCosts(){
+    
 }
