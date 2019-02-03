@@ -89,7 +89,7 @@ function addtogether() {
 
     console.log(Math.round(totalMonthly));
     $('#monthlyCosts').empty();//reset monthly costs field so they dont keep repeating
-    $('#monthlyCosts').append('Total Monthly Costs:  $', Math.round(totalMonthly));
+    $('#monthlyCosts').append('Total Monthly Costs:  $', totalMonthly.toFixed(2));
 }
 function deleteEmployee() {
     console.log('in delete employee');
