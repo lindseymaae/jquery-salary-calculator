@@ -27,7 +27,7 @@ function addEmployee() {
     console.log(employeeLastName);
     let employeeIdNumber = $('#IDnumberInput').val();
     console.log(employeeIdNumber);
-    let employeeJobTitle = $('#jobTitleInpu').val();
+    let employeeJobTitle = $('#jobTitleInput').val();
     console.log(employeeJobTitle);
     let employeeSalary = $('#annualSalaryInput').val();
     console.log(employeeSalary);
