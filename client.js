@@ -8,14 +8,37 @@
 console.log('client.js has been loaded');
 
 $(document).ready(onReady);
-
-function onReady(){
+let employeeInfo = [];
+let employeeList = [];
+function onReady() {
     console.log('jquery is loaded');
-    $('#inputButton').on('click' , getInfo)
+    $('#inputButton').on('click', getInfo)
 }
 
-function getInfo(){
+function getInfo() {
     console.log('submit button working');
+    let employeeFirstName = $('#firstNameInput').val();
+    console.log(employeeFirstName);
+    let employeeLastName = $('#lastNameInput').val();
+    console.log(employeeLastName);
+    let employeeIdNumber = $('#IDnumberInput').val();
+    console.log(employeeIdNumber);
+    let employeeJobTitle = $('#jobTitleInpu').val();
+    console.log(employeeJobTitle);
+    let employeeSalary = $('#annualSalaryInput').val();
+    console.log(employeeSalary);
+
+    employeeInfo.push(employeeFirstName, employeeLastName, employeeIdNumber, employeeJobTitle, employeeSalary);
+
+    console.log(employeeInfo);
+
+    employeeList.push(employeeInfo);
+
+    console.log(employeeList);
     
-    
+
+
+
+
+
 }
