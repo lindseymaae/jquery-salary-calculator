@@ -97,6 +97,9 @@ function addtogether() {
     }//add together individual monthly salaries for total monthly cost
 
     console.log(Math.round(totalMonthly));
+    if (totalMonthly >= 20000){
+        $('#monthlyCosts').css('background-color','red');
+    }//change background color to red if total monthly exceeds $20,000
     $('#monthlyCosts').empty();//reset monthly costs field so they dont keep repeating
     $('#monthlyCosts').append('Total Monthly Costs:  $', Number(totalMonthly.toFixed(2)));
 }
