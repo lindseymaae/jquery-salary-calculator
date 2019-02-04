@@ -9,16 +9,19 @@
 </head>
 
 <body>
-    <h1>Employee Data Table</h1>
-    <div id="inputDiv">
-        <input placeholder="First" id="firstNameInput">
-        <input placeholder="Last" id="lastNameInput">
-        <input placeholder="ID Number" id="IDnumberInput">
-        <input placeholder="Job title" id="jobTitleInput">
-        <input placeholder="Annual Salary" id="annualSalaryInput">
+    <div id="header">
+        <h1>Employee Data Table</h1>
+    </div>
+    <div id="inputDiv">add types to inputs to make sure that you only put numbers in number type boxes
+        <input type="text" placeholder="First" id="firstNameInput">
+        <input type="text" placeholder="Last" id="lastNameInput">
+        <input type="text" placeholder="ID Number" id="IDnumberInput">
+        <input type="text" placeholder="Job title" id="jobTitleInput">
+        <input type="number" placeholder="Annual Salary" id="annualSalaryInput">
         <button id="inputButton">Submit</button>
     </div>
-    <div>
+    <div id="outputDiv">
+        <h2>Employees</h2>
         <table style="width:100%">
             <thead>
                 <tr>
@@ -31,7 +34,7 @@
                 </tr>
             </thead>
             <tbody id="employeeTable">
-                <tr> 
+                <tr>
                     <td>Example:</td>
                     <td>Derek</td>
                     <td> Larson</td>
@@ -44,7 +47,7 @@
         </table>
 
     </div>
-    <p id="monthlyCosts">Total Monthly Costs:</p>
+    <h2 id="monthlyCosts">Total Monthly Costs:</h2> could put in a span for the output value: $0.00
 </body>
 
 </html>

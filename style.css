@@ -3,6 +3,9 @@ input{
       height: 20px;
     
 }
+body{
+  font-family: arial;
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;

@@ -6,7 +6,10 @@
 //DOM and clear the input fields.
 //Using the stored information, 
 //calculate monthly costs and append this to the to DOM.
-//If the total monthly cost exceeds $20, 000, add a red background color to the total monthly cost.
+//If the total monthly cost exceeds $20, 000, add a red background 
+//color to the total monthly cost.
+
+//program is a solution to a problem
 console.log('client.js has been loaded');
 
 $(document).ready(onReady);
@@ -16,9 +19,15 @@ function onReady() {
     console.log('jquery is loaded');
     $('#inputButton').on('click', addEmployee);
     $('#employeeTable').on('click', '.deleteButton', deleteEmployee);
-}
+}//end onReady
 
 function addEmployee() {
+    //could do let newEmployee= {
+    // firstName: $('#firstNameInput').val(),
+    // lastName: 
+    // }
+    //making a new object^ with input values instead of different variables like below
+    //helps with making an array of employees
     //access input fields
     console.log('submit button working');
     let employeeFirstName = $('#firstNameInput').val();
@@ -54,7 +63,7 @@ function addEmployee() {
         ${employeeJobTitle}
         </td>
         <td>
-        ${employeeSalary}
+        $${Number(employeeSalary).toFixed(2)}
         </td>
         
         </tr>
@@ -89,7 +98,7 @@ function addtogether() {
 
     console.log(Math.round(totalMonthly));
     $('#monthlyCosts').empty();//reset monthly costs field so they dont keep repeating
-    $('#monthlyCosts').append('Total Monthly Costs:  $', totalMonthly.toFixed(2));
+    $('#monthlyCosts').append('Total Monthly Costs:  $', Number(totalMonthly.toFixed(2)));
 }
 function deleteEmployee() {
     console.log('in delete employee');
@@ -98,3 +107,5 @@ function deleteEmployee() {
 }
 
 
+//any time you have a list of items you should put the items into an array
+//make them objects so that the data stays together as one employee
